@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const cores ={
     corFundoPrincipal:'#ffffff',
@@ -11,8 +11,10 @@ export const cores ={
     corFundoSidebar:'#eeeeee',
     corParagrafo:'#8b8b8b',
     corTitulo:'#000000',
-    corFontsBtn:'#ffffff'
-
+    corFontsBtn:'#ffffff',
+    corBorda: '#eeeeee',
+    corFundoCard: '#a1a1a1',
+    corSpan:'#5e5e5e',
 }
 
 const RootGlobalStyle = createGlobalStyle`
@@ -21,11 +23,14 @@ const RootGlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto', 'Roboto Mono', sans-serif;
-        background-color:${cores.corFundoPrincipal};
 }
-
 `
-
+export const container = styled.div`
+    display: grid;
+    grid-template-columns: 224px auto;
+    gap: 40px;
+    
+`
 
 export default RootGlobalStyle
 
