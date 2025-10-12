@@ -1,5 +1,5 @@
-import BarraLateral from "./containers/barraLateral/BarraLateral";
-import ListaDeTarefas from "./containers/listaDeTarefas/ListaDeTarefas";
+import BarraLateral from "./containers/barraLateral";
+import ListaDeTarefas from "./containers/listaDeTarefas";
 import * as s from "./styles/global";
 function App() {
   return (

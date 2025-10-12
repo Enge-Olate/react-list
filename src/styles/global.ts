@@ -15,6 +15,7 @@ export const cores ={
     corBorda: '#eeeeee',
     corFundoCard: '#a1a1a1',
     corSpan:'#5e5e5e',
+    corCardQuandoAtivo: '#1E90FF'
 }
 
 const RootGlobalStyle = createGlobalStyle`
