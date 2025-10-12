@@ -15,7 +15,8 @@ export const cores ={
     corBorda: '#eeeeee',
     corFundoCard: '#a1a1a1',
     corSpan:'#5e5e5e',
-    corCardQuandoAtivo: '#1E90FF'
+    corCardQuandoAtivo: '#1E90FF',
+    corFundoCardTarefa: '#FCFCFC'
 }
 
 const RootGlobalStyle = createGlobalStyle`
@@ -24,6 +25,8 @@ const RootGlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto', 'Roboto Mono', sans-serif;
+        list-style: none;
+
 }
 `
 export const container = styled.div`

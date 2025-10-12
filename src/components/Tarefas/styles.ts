@@ -1,0 +1,56 @@
+import styled from "styled-components";
+import { cores } from "../../styles/global";
+
+export const Card = styled.div`
+    width: 1062px;
+    height: 215px;
+    margin-top: 40px;
+    padding: 16px;
+    border: 1px solid ${cores.corBorda};
+    border-radius: 8px;
+    background-color: ${cores.corFundoCardTarefa};
+    box-shadow: 0px 4px 4px rgba(0,0,0, .25);
+
+`
+export const Titulo = styled.h2`
+margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: ${cores.corTitulo};
+    
+`
+
+export const Tag = styled.span`
+    padding: 4px 8px;    
+    margin-right:8px;
+background-color: ${cores.corBtnImportante};
+    border-radius: 8px;
+    color: ${cores.corFundoPrincipal}
+
+`
+export const Descricao = styled.textarea`
+width:1030px;
+height: 48px;
+border:none;
+margin-top:16px;
+color: ${cores.corParagrafo};
+font-family: 'Roboto Mono';
+font-size: 14px;
+line-height: 24px;
+font-weight: 400;
+`
+export const BarraDeAcoes = styled.div`
+padding-top: 16px;
+border-top: 1px solid rgba(0, 0, 0, .1);
+
+`
+
+export const Botoes = styled.button`
+padding: 8px 12px;
+margin-right: 8px;
+font-size: 12px;
+font-weight:700;
+border-radius: 8px;
+background-color: ${cores.corBtnEditar};
+color: ${cores.corFundoPrincipal}
+`
