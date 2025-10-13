@@ -1,20 +1,37 @@
+import { useState } from "react";
 import * as s from "./styles";
-
-export default function Card() {
+import type { Prioridade, Status } from "../../utils/enums/enumeracoes";
+type Props = {
+  descricao: string;
+  prioridade: Prioridade;
+  status: Status;
+  titulo: string;
+};
+export default function Card({
+  descricao,
+  status,
+  prioridade,
+  titulo,
+}: Props) {
+  const [editando, setEditando] = useState(false);
   return (
     <s.Card>
-      <s.Titulo>Estudar programação</s.Titulo>
-      <s.Tag>Imortante</s.Tag>
-      <s.Tag>Pendente</s.Tag>
-      <s.Descricao />
-        {/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui commodi
-        nulla corrupti in debitis cum dolorem deserunt facere. Perspiciatis,
-        consectetur ducimus saepe accusantium tenetur suscipit ipsum labore
-        quisquam hic ut! */}
-     
+      <s.Titulo>{titulo}</s.Titulo>
+      <s.Tag prioridade={prioridade}>{prioridade}</s.Tag>
+      <s.Tag status={status}>{status}</s.Tag>
+      <s.Descricao value={descricao} />
       <s.BarraDeAcoes>
-        <s.Botoes>Editar</s.Botoes>
-        <s.Botoes>remover</s.Botoes>
+        {editando ? (
+          <>
+            <s.BotaoSalvar>Salvar</s.BotaoSalvar>
+            <s.BotaoRemover onClick={() => setEditando(false)}>Cancelar</s.BotaoRemover>
+          </>
+        ) : (
+          <>
+            <s.Botoes onClick={() => setEditando(true)}>Editar</s.Botoes>
+            <s.BotaoRemover>Remover</s.BotaoRemover>
+          </>
+        )}
       </s.BarraDeAcoes>
     </s.Card>
   );

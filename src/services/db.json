@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "título": "Completar o relatório de vendas",
+    "descrição": "Gerar o relatório de vendas trimestral e enviá-lo para a equipe de gerenciamento.",
+    "prioridade": "Urgente",
+    "status": "Pendente"
+  },
+  {
+    "id": 2,
+    "título": "Agendar consulta médica",
+    "descrição": "Ligar para o consultório do Dr. Silva para agendar um check-up anual.",
+    "prioridade": "Importante",
+    "status": "Pendente"
+  },
+  {
+    "id": 3,
+    "título": "Comprar mantimentos",
+    "descrição": "Ir ao supermercado para comprar itens da lista de compras da semana.",
+    "prioridade": "Normal",
+    "status": "Concluído"
+  },
+  {
+    "id": 4,
+    "título": "Estudar para a prova de certificação",
+    "descrição": "Revisar os capítulos 5 a 8 do material de estudo para a prova da próxima sexta-feira.",
+    "prioridade": "Urgente",
+    "status": "Pendente"
+  },
+  {
+    "id": 5,
+    "título": "Consertar a torneira da cozinha",
+    "descrição": "Comprar as peças necessárias e consertar a torneira que está vazando na cozinha.",
+    "prioridade": "Importante",
+    "status": "Concluído"
+  }
+]
