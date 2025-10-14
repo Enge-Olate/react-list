@@ -11,7 +11,7 @@ function BarraLateral() {
         <FiltroCard legenda='Urgentes' contador={3}/>
         <FiltroCard legenda='Importantes' contador={4}/>
         <FiltroCard legenda='Normal' contador={5}/>
-        <FiltroCard ativo legenda='Todas' contador={6}/>
+        <FiltroCard ativo={true} legenda='Todas' contador={6}/>
       </s.cards>
       </div>      
     </s.Aside>
