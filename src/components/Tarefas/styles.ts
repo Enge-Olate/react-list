@@ -86,7 +86,8 @@ font-size: 12px;
 font-weight:700;
 border-radius: 8px;
 background-color: ${cores.corBtnEditar};
-color: ${cores.corFundoPrincipal}
+color: ${cores.corFundoPrincipal};
+cursor: pointer;
 `
 
 export const BotaoSalvar = styled(Botoes)`background-color: ${cores.corBtnsalvar};`

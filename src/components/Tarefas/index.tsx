@@ -1,19 +1,18 @@
+import { useDispatch} from "react-redux";
 import { useState } from "react";
 import * as s from "./styles";
-import type { Prioridade, Status } from "../../utils/enums/enumeracoes";
-type Props = {
-  descricao: string;
-  prioridade: Prioridade;
-  status: Status;
-  titulo: string;
-};
+import { remover } from "../../store/reducers/tarefas";
+import  Tarefa from "../../models/Tarefas";
+type Props = Tarefa
 export default function Card({
   descricao,
   status,
   prioridade,
   titulo,
+  id
 }: Props) {
   const [editando, setEditando] = useState(false);
+  const dispatch = useDispatch();
   return (
     <s.Card>
       <s.Titulo>{titulo}</s.Titulo>
@@ -29,7 +28,7 @@ export default function Card({
         ) : (
           <>
             <s.Botoes onClick={() => setEditando(true)}>Editar</s.Botoes>
-            <s.BotaoRemover>Remover</s.BotaoRemover>
+            <s.BotaoRemover onClick={()=> dispatch(remover(id))}>Remover</s.BotaoRemover>
           </>
         )}
       </s.BarraDeAcoes>

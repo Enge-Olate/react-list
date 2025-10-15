@@ -18,15 +18,14 @@ function paraStatus(value: string):Status{
 }
 
 function ListaDeTarefas() {
-  // const tarefas = db;
-  const {tarefas} = useSelector((state: RootReducer)=>state )
+  const {items} = useSelector((state: RootReducer)=>state.tarefas )
   return (
     <s.Main>
       <s.Titulo>2 tarefas marcadas como: ”todas” e ”termo”</s.Titulo>
       <s.UlCard>
-        {tarefas.map((t) => (
-          <li key={t.id}>
-            <Card  titulo={t.titulo} descricao={t.descricao} prioridade={paraPrioridade(t.prioridade)} status={paraStatus(t.status)}/>
+        {items.map((t) => (
+          <li key={t.titulo}>
+            <Card id={t.id} titulo={t.titulo} descricao={t.descricao} prioridade={paraPrioridade(t.prioridade)} status={paraStatus(t.status)}/>
           </li>
         ))}
       </s.UlCard>
