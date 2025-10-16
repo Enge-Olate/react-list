@@ -4,10 +4,10 @@ import * as enums from '../../utils/enums/enumeracoes'
 import Tarefa from '../../models/Tarefas'
 
 type PropsTarefas = {
-    items: Tarefa[]
+    itens: Tarefa[]
 }
 const initialState: PropsTarefas = {
-    items: [
+    itens: [
         {
             "id": 1,
             "titulo": "Completar o relatório de vendas",
@@ -51,14 +51,14 @@ const tarefasSlice = createSlice({
     initialState,
     reducers: {
         remover: (state, action: PayloadAction<number>) => {
-            state.items = state.items.filter((tarefa) => tarefa.id !== action.payload)
+            state.itens = state.itens.filter((tarefa) => tarefa.id !== action.payload)
         },
         editar: (state, action: PayloadAction<Tarefa>) =>{
-            const indexTarefa = state.items.findIndex(
+            const indexTarefa = state.itens.findIndex(
                 (t)=> t.id === action.payload.id
             )
             if(indexTarefa >= 0){
-                state.items[indexTarefa] = action.payload
+                state.itens[indexTarefa] = action.payload
             }
         }
     }
