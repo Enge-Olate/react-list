@@ -20,17 +20,7 @@ function verificaPrioridadeStatus(props: TagProps): string{
     }
     return `${cores.corSpan}`
     
-    // if('status' in props){
-    //     return props.status === 'Pendente'? `${cores.corBtnPendente}`:`${cores.corBtnsalvar}`
-    // }
-    // if('prioridade' in props){
-    //     if(props.prioridade === 'Urgente'){
-    //         return `${cores.corBtnCancelar}`
-    //     }else if(props.prioridade === 'Importante'){
-    //         return `${cores.corBtnImportante}`
-    //     }
-    // }
-    // return `${cores.corSpan}`
+    
 }
 
 export const Card = styled.div`

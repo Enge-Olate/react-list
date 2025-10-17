@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Card from "../../components/Tarefas";
-import type { Prioridade, Status } from "../../utils/enums/enumeracoes";
+import { Prioridade, type Status } from "../../utils/enums/enumeracoes";
 import * as s from "./styles";
 import type { RootReducer } from "../../store";
 
@@ -22,27 +22,44 @@ function ListaDeTarefas() {
   const { termo, criterio, valor } = useSelector((state: RootReducer) => state.filtros)
   function tarefaFiltrada() {
     let tarefasFiltradas = itens
-    if (termo) {
+    if (termo !== undefined) {
       tarefasFiltradas = tarefasFiltradas.filter(
-        (item) => item.titulo.toLowerCase().search(termo.toLocaleLowerCase()) >= 0
-      )
+        (item) => item.titulo.toLowerCase().search(termo.toLocaleLowerCase()) >= 0)
       if (criterio === 'prioridade') {
         tarefasFiltradas = tarefasFiltradas.filter(
           (item) => item.prioridade === valor
         )
-      }else if(criterio === 'status'){
+      } else if (criterio === 'status') {
         tarefasFiltradas = tarefasFiltradas.filter(
-          (item)=> item.status ===valor
+          (item) => item.status === valor
         )
       }
+      return tarefasFiltradas
+    } else {
+      return itens
     }
-    return tarefasFiltradas
   }
+  const exibeResultadoFiltragem = (quantidade: number) => {
+    let mensagem = ''
+
+    const complementacao =
+      termo !== undefined && termo.length > 0 ? `e "${termo}"` : ''
+
+    if (criterio === 'todas') {
+      mensagem = `${quantidade} tarefa(s) encontrada(s) como: todas ${complementacao}`
+    } else {
+      mensagem = `${quantidade} tarefa(s) encontrada(s) como: ${`${criterio}=${valor}`}" ${complementacao}`
+    }
+    return mensagem
+  }
+  
+  const tarefas = tarefaFiltrada()
+  const mensagem = exibeResultadoFiltragem(tarefas.length)
   return (
     <s.Main>
-      <s.Titulo>2 tarefas marcadas como: ”todas” e &#8220; {termo}&#8220; </s.Titulo>
+      <s.Titulo>{mensagem} </s.Titulo>
       <s.UlCard>
-        {tarefaFiltrada().map((t) => (
+        {tarefas.map((t) => (
           <li key={t.titulo}>
             <Card id={t.id} titulo={t.titulo} descricao={t.descricao} prioridade={paraPrioridade(t.prioridade)} status={paraStatus(t.status)} />
           </li>

@@ -12,12 +12,12 @@ function BarraLateral() {
       <div>
         <s.busca type="text" placeholder="Procurar" value={termo} onChange={(evento)=> dispatch(alterarTermo(evento.target.value))} />
         <s.cards>
-          <FiltroCard valor={enums.Status.PENDENTE} criterio='status' legenda='Pendentes' contador={1} />
-          <FiltroCard valor={enums.Status.CONCLUIDO} criterio='status' legenda='Concluída' contador={2} />
-          <FiltroCard valor={enums.Prioridade.URGENTE} criterio='prioridade' legenda='Urgentes' contador={3} />
-          <FiltroCard valor={enums.Prioridade.IMPORTANTE} criterio='prioridade' legenda='Importantes' contador={4} />
-          <FiltroCard valor={enums.Prioridade.NORMAL} criterio='prioridade' legenda='Normal' contador={5} />
-          <FiltroCard criterio='todas' ativo legenda='Todas' contador={6} />
+          <FiltroCard valor={enums.Status.PENDENTE} criterio='status' legenda='Pendentes'  />
+          <FiltroCard valor={enums.Status.CONCLUIDO} criterio='status' legenda='Concluída'/>
+          <FiltroCard valor={enums.Prioridade.URGENTE} criterio='prioridade' legenda='Urgentes'/>
+          <FiltroCard valor={enums.Prioridade.IMPORTANTE} criterio='prioridade' legenda='Importantes'/>
+          <FiltroCard valor={enums.Prioridade.NORMAL} criterio='prioridade' legenda='Normal'/>
+          <FiltroCard criterio='todas' legenda='Todas'/>
         </s.cards>
       </div>
     </s.Aside>
