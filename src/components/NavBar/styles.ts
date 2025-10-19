@@ -3,6 +3,7 @@ import { cores } from "../../styles/global";
 
 
 export const Nav = styled.nav`
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

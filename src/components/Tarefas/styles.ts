@@ -60,7 +60,7 @@ font-family: 'Roboto Mono';
 font-size: 14px;
 line-height: 24px;
 font-weight: 400;
-risize: none;
+resize: none;
 background-color: transparent;
 `
 export const BarraDeAcoes = styled.div`
