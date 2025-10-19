@@ -10,13 +10,14 @@ export const ContainerForm = styled.div`
 
 export const Title = styled(Titulo)`
     width: 94px;
+    margin-bottom: 39px;
 `
 
 export const Form = styled.form`
     width: 547px;
     margin-bottom: 16px;
     input{
-        padding: 8px;
+        padding: 8px 22.79px;
         width: 100%;
         border: 1px solid ${cores.corFundoCard};
         border-radius: 8px;
@@ -30,7 +31,7 @@ export const Form = styled.form`
 
 export const FormDescricao = styled(Descricao)`
 margin-top: 16px;
-padding: 8.75px;
+padding: 8px 22.79px;
 width: 100%;
 height: 183px;
 border: 1px solid ${cores.corFundoCard};
