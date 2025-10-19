@@ -7,7 +7,7 @@ import type { RootReducer } from '../../store'
 export type Props = {
   legenda: string
   criterio: 'prioridade' | 'status' | 'todas'
-  valor: enums.Prioridade | enums.Status
+  valor?: enums.Prioridade | enums.Status
 }
 function FiltroCard({ legenda, criterio, valor }: Props) {
   const { filtros, tarefas } = useSelector((state: RootReducer) => state)

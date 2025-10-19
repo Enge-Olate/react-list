@@ -1,14 +1,17 @@
 import { Provider } from "react-redux";
-import BarraLateral from "./containers/barraLateral";
-import ListaDeTarefas from "./containers/listaDeTarefas";
+import { Route, Routes } from "react-router-dom";
 import * as s from "./styles/global";
 import { store } from "./store";
+import NavBar from "./components/NavBar";
+import Home from "./pages/home";
 function App() {
   return (
     <Provider store={store}>
+      <NavBar />
       <s.container>
-        <BarraLateral />
-        <ListaDeTarefas />
+        <Routes>
+          <Route index element={<Home />}/>
+        </Routes>
       </s.container>
     </Provider>
   );

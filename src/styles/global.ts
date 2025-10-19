@@ -26,6 +26,7 @@ const RootGlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Roboto', 'Roboto Mono', sans-serif;
         list-style: none;
+        text-decoration: none;
 
 }
 `
