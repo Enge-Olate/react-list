@@ -1,26 +1,26 @@
 import styled from "styled-components";
 import { cores } from "../../styles/global";
 import * as enums from '../../utils/enums/enumeracoes'
-type TagProps={
+type TagProps = {
     prioridade?: enums.Prioridade
     status?: enums.Status
     parametro?: string
 }
 
-function verificaPrioridadeStatus(props: TagProps): string{
-    if(props.status){
+function verificaPrioridadeStatus(props: TagProps): string {
+    if (props.status) {
         return props.status === 'Pendente' ? cores.corBtnPendente : cores.corBtnsalvar;
-        
-    }else{
-        if(props.prioridade === enums.Prioridade.URGENTE){
+
+    } else {
+        if (props.prioridade === enums.Prioridade.URGENTE) {
             return cores.corBtnCancelar
-        }else if(props.prioridade === enums.Prioridade.IMPORTANTE){
+        } else if (props.prioridade === enums.Prioridade.IMPORTANTE) {
             return cores.corBtnImportante
         }
     }
     return `${cores.corSpan}`
-    
-    
+
+
 }
 
 export const Card = styled.div`
@@ -32,10 +32,15 @@ export const Card = styled.div`
     border-radius: 16px;
     background-color: ${cores.corFundoCardTarefa};
     box-shadow: 0px 4px 4px rgba(0,0,0, .25);
+    label{
+        display: flex;
+        align-itens: center;
+        margin-bottom: 14px;
+    }
 
 `
 export const Titulo = styled.h2`
-margin-bottom: 14px;
+    margin-left: 8px;
     font-size: 18px;
     font-weight: 700;
     color: ${cores.corTitulo};

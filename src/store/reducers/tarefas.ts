@@ -61,11 +61,26 @@ const tarefasSlice = createSlice({
                 state.itens[indexTarefa] = action.payload
             }
         },
-        cadastrar:(state, action: PayloadAction<Tarefa>)=>{
+        cadastrar:(state, action: PayloadAction<Omit<Tarefa, 'id'>>)=>{
             const tarefaExistente = state.itens.find((tarefa)=>tarefa.titulo.toLocaleLowerCase() === action.payload.titulo.toLocaleLowerCase());
-            tarefaExistente ? alert('Já existe uma tarefa assim.'): state.itens.push(action.payload);
+            const ultimaTarefa = state.itens[state.itens.length -1]
+            if(tarefaExistente){
+                alert('Já existe uma tarefa assim!');
+            }else{
+                const tarefaNova = {
+                    ...action.payload,
+                    id: ultimaTarefa ? ultimaTarefa.id +1 : 1
+                }
+                state.itens.push(tarefaNova)
+            }
+        },
+        alteraStatus:(state, action: PayloadAction<{id: Number; finalizado: Boolean}>)=>{
+            const indexTarefa = state.itens.findIndex((t)=> t.id === action.payload.id)
+            if(indexTarefa >= 0){
+                state.itens[indexTarefa].status = action.payload.finalizado ? enums.Status.CONCLUIDO:enums.Status.PENDENTE
+            }
         }
     }
 })
-export const { remover, editar, cadastrar } = tarefasSlice.actions
+export const { remover, editar, cadastrar, alteraStatus } = tarefasSlice.actions
 export default tarefasSlice.reducer
